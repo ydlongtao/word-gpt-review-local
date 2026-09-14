@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <Id>40c4b40e-4f71-4f16-a980-890b12786f53</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Local Word Review</ProviderName>
+  <DefaultLocale>zh-CN</DefaultLocale>
+  <DisplayName DefaultValue="GPT 本地审阅"/>
+  <Description DefaultValue="用 GPT 润色正文，并将真实差异写入 Word 原生修订。"/>
+  <IconUrl DefaultValue="https://localhost:3443/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3443/icon-64.png"/>
+  <SupportUrl DefaultValue="https://localhost:3443/"/>
+  <AppDomains><AppDomain>https://localhost:3443</AppDomain></AppDomains>
+  <Hosts><Host Name="Document"/></Hosts>
+  <Requirements><Sets DefaultMinVersion="1.4"><Set Name="WordApi"/></Sets></Requirements>
+  <DefaultSettings><SourceLocation DefaultValue="https://localhost:3443/"/></DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>

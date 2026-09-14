@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Word GPT 审阅</title><link rel="stylesheet" href="/style.css">
+<script type="importmap">{"imports":{"diff":"/vendor/diff.js"}}</script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+<script type="module" src="/app.mjs"></script></head>
+<body><main>
+<header><span class="eyebrow">LOCAL WORD ASSISTANT</span><h1>字斟句酌<span class="dot">.</span></h1><p>让表达更好，让每次修改都有迹可循。</p></header>
+<div class="connection"><span id="light"></span><span id="connection">正在连接本地服务…</span></div>
+<section class="editor"><label for="scope">01 <b>选择审阅范围</b></label><select id="scope"><option value="selection">Word 中选中的文字</option><option value="body">文档正文（最多 12000 字符）</option></select>
+<label for="instruction">02 <b>告诉 GPT 如何修改</b></label><textarea id="instruction" rows="4" maxlength="2000">润色文字，使表达清晰、流畅、简洁。保持原意、事实、数字和专业术语，不做不必要的改写。</textarea>
+<div class="presets"><button data-prompt="润色为严谨、清晰的学术表达，保留术语、数字、引文和原意，避免夸大结论。">学术润色</button><button data-prompt="精简冗余表达，让文字更直接。保留原意、事实和数字。">精简表达</button><button data-prompt="仅纠正错别字、语法和标点错误，其余逐字保留。">仅纠错</button></div>
+<button id="generate" class="primary" disabled>生成修改建议 <span>↗</span></button><button id="demo" class="text-button">先看一个修订示例</button></section>
+<p id="status" role="status" aria-live="polite">在 Word 中打开此插件，即可审阅选中的文字。</p>
+<section id="preview-section" hidden><div class="preview-title"><h2>修改预览</h2><span id="count"></span></div><div class="legend"><span><i class="added"></i>新增</span><span><i class="removed"></i>删除</span><span><i class="same"></i>未改动</span></div><div id="preview"></div><button id="apply" class="primary" disabled>以修订方式写入 Word</button><p class="hint">写入后，在 Word「审阅 → 所有标记」查看，并逐条接受或拒绝。修订作者使用当前 Word 用户名。</p></section>
+<details><summary>连接模型与使用说明</summary><p>在项目的 .env 中填写模型地址、名称和 API Key，然后重启本地服务。密钥保存在本机，不传给插件页面。</p><p>使用云端模型时，选定的文字与修改要求会发送至该供应商。使用本地模型时，推理在本机进行；Office.js 仍由微软 CDN 加载。</p><p>支持普通正文段落，保留未修改文字的格式。暂不处理已有修订、批注、域、链接、图片和段内手动换行。</p></details>
+<footer>本地运行 · 原生修订 · 由你决定</footer>
+</main></body></html>

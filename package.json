@@ -1,0 +1,23 @@
+{
+  "name": "word-gpt-review-local",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "setup": "node scripts/setup.mjs",
+    "test": "node --test",
+    "validate": "office-addin-manifest validate manifest.xml"
+  },
+  "dependencies": {
+    "diff": "^8.0.2",
+    "office-addin-dev-certs": "^2.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "office-addin-manifest": "^3.0.0"
+  },
+  "overrides": {
+    "adm-zip": "^0.6.1"
+  }
+}
